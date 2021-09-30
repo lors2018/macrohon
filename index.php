@@ -35,6 +35,7 @@ include_once ('config.php');
 						<th>Phone</th>
 						<th>Fax</th>
 						<th>Project Name</th>
+						<th>Operations</th>
 						
 
 					</tr>
@@ -57,6 +58,9 @@ include_once ('config.php');
 					<td><?php echo $data['QouPhone']?></td>
 					<td><?php echo $data['QouFax']?></td>
 					<td><?php echo $data['Projectname']?></td>
+					<td>
+						<a href="delete.php?delete=<?php echo $data['Qouref']?>" class ="btn btn-danger">Delete</a>
+					</td>
 					</tr>
 
 

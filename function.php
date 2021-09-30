@@ -51,6 +51,11 @@ if ($result) {
 }
 
 }
+if (isset($_GET['delete'])) {
+	// code...
+	$Qouref =$_GET['delete'];
+	$mysqli->query("DELET FROM where $Qouref=$Queref");
+}
 
 
 
