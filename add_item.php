@@ -4,7 +4,7 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<meta charset="UTF-8">
-	<title>ADD NEW ITEM</title>
+	<title>ADD NEW ITEs</title>
 </head>
 <body>
 	<div class="container">
