@@ -1,13 +1,29 @@
 <?php
-include('function.php');
 
+$con = mysqli_connect("localhost","root","","macro");
 
+$id = $_GET['update'];
+if (isset($_POST['submit'])) {
+	# code...
+	$Qouref = $_POST['Qouref'];
+	$Date = Date('y-m-d', strtotime($_POST['Date']));
+	$Qouloc = $_POST['Qouloc'];
+	$QouPhone = $_POST['QouPhone'];
+	$QouFax = $_POST['QouFax'];
+	$Projectname = $_POST['Projectname'];
 
+$query = "Update 'data1' set id=$id, Qouref='$Qouref', Date='$Data', Qouloc='$Qouloc', QouPhone='QouFax='$QouFax', Projectname='$Projectname' where id=$id";
+$result = mysqli_query($con,$query);
+if ($result) {
+	# code...
+		
+		header("location: index.php");
+}else{
+	die(mysqli_error($con));
 
-$id= $_GET['update']
+}
 
-
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,41 +45,41 @@ $id= $_GET['update']
 				<br>
 				<br>
 				</div>
-		<form method="POST" action="function.php">
+		<form method="POST" action="update.php">
 			<div class="col-md-6">
-						<input type="text" name="Qouref" class='form-control' placeholder="Qoutation Ref" value=" <?php echo $Qouref ?>" > 
+						<input type="text" name="Qouref" class='form-control' placeholder="Qoutation Ref" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="date" name="Date" class='form-control' placeholder="Date" value="<?php echo $Date ?>" > 
+						<input type="date" name="Date" class='form-control' placeholder="Date" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="Qouloc" class='form-control' placeholder="Location" value="<?php echo $Qouloc ?>" > 
+						<input type="text" name="Qouloc" class='form-control' placeholder="Location" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="QouPhone" class='form-control' placeholder="Phone" value="<?php echo $QouPhone ?>" > 
+						<input type="text" name="QouPhone" class='form-control' placeholder="Phone" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="QouFax" class='form-control' placeholder="Fax" value="<?php echo $QouFax ?>" > 
+						<input type="text" name="QouFax" class='form-control' placeholder="Fax" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="Projectname" class='form-control' placeholder="Project Name" value="<?php echo $Projectname ?>" > 
+						<input type="text" name="Projectname" class='form-control' placeholder="Project Name" value="" > 
 					</div>
 					<br>
 					<br>
 					<br>
 			
 			<div class="col-md-6 text-center">
-						<input type="submit"  class="btn btn-primary"name="update" value="Update">
+						<input type="submit"  class="btn btn-primary"name="submit" value="Update">
 					</div>
 					</div>
 			</div>
