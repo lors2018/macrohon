@@ -24,32 +24,32 @@ include('function.php');
 				</div>
 		<form method="POST" action="function.php">
 			<div class="col-md-6">
-						<input type="text" name="Qouref" class='form-control' placeholder="Qoutation Ref" value=" <?php echo $Qouref ?>" > 
+						<input type="text" name="Qouref" class='form-control' placeholder="Qoutation Ref" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="date" name="Date" class='form-control' placeholder="Date" value="<?php echo $Date ?>" > 
+						<input type="date" name="Date" class='form-control' placeholder="Date" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="Qouloc" class='form-control' placeholder="Location" value="<?php echo $Qouloc ?>" > 
+						<input type="text" name="Qouloc" class='form-control' placeholder="Location" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="QouPhone" class='form-control' placeholder="Phone" value="<?php echo $QouPhone ?>" > 
+						<input type="text" name="QouPhone" class='form-control' placeholder="Phone" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="QouFax" class='form-control' placeholder="Fax" value="<?php echo $QouFax ?>" > 
+						<input type="text" name="QouFax" class='form-control' placeholder="Fax" value="" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="Projectname" class='form-control' placeholder="Project Name" value="<?php echo $Projectname ?>" > 
+						<input type="text" name="Projectname" class='form-control' placeholder="Project Name" value="" > 
 					</div>
 					<br>
 					<br>
