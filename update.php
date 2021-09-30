@@ -1,19 +1,14 @@
 <?php
-include 'function.php';
+require_once('function.php);
 $con = mysqli_connect("localhost","root","","macro");
-$Qouref="";
-$id = $_GET['update'];
-$sql="Select * from data1 where id=$id";
-$result=mysqli_query($con,$sql);
-$row=mysqli_fetch_assoc($result);
-$Qouref = $row['Qouref'];
-$Date = $row['Date'];
-$Qouloc = $row['Qouloc'];
-$QouPhone = $row['QouPhone'];
-$QouFax = $row['QouFax'];
-$Projectname = $row['Projectname'];
 
-
+ if( isset($_GET['id'])){
+        
+        $id = $_GET['id'];
+        $res = mysqli_query($dbc,"SELECT * FROM data1 WHERE id=".$id);
+        $row = mysqli_fetch_array($res);
+        
+    }
 if (isset($_POST['submit'])) {
 	# code...
 	$Qouref = $_POST['Qouref'];
@@ -23,17 +18,16 @@ if (isset($_POST['submit'])) {
 	$QouFax = $_POST['QouFax'];
 	$Projectname = $_POST['Projectname'];
 
-$query = "Update 'data1' set id=$id, Qouref='$Qouref', Date='$Data', Qouloc='$Qouloc', QouPhone='QouFax='$QouFax', Projectname='$Projectname' where id=$id";
+$query = "Update 'data1' set id='$id', Qouref='$Qouref', Date='$Data', Qouloc='$Qouloc', QouPhone='QouFax='$QouFax', Projectname='$Projectname' where id=$id";
 $result = mysqli_query($con,$query);
-if ($result) {
-	# code...
-		
-		header("location: index.php");
-}else{
-	die(mysqli_error($con));
-
-}
-
+if (!mysqli_query($dbc, $query)) {
+            die('Error: ' . mysqli_error($dbc));
+        }else{
+            echo "<script>";
+            echo "alert('  Record updated!')";
+            echo "</script>";
+         header('location: index.php);
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -48,7 +42,7 @@ if ($result) {
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2" style="margin-top: 2%;">
 				<div class="row">
-				<form action="" method="POST"> 
+				<form action="update.php" method="POST"> 
 
 				</form>
 				<br>
@@ -90,7 +84,7 @@ if ($result) {
 					<br>
 			
 			<div class="col-md-6 text-center">
-						<input type="submit"  class="btn btn-primary"name="submit" value="Update">
+						<input type="submit" id="submit" class="btn btn-primary"name="submit" value="Update">
 					</div>
 					</div>
 			</div>
