@@ -1,4 +1,7 @@
+<?php
+include('function.php');
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,32 +24,32 @@
 				</div>
 		<form method="POST" action="function.php">
 			<div class="col-md-6">
-						<input type="text" name="Qouref" class='form-control' placeholder="Qoutation Ref" value="" > 
+						<input type="text" name="Qouref" class='form-control' placeholder="Qoutation Ref" value=" <?php echo $Qouref ?>" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="date" name="Date" class='form-control' placeholder="Date" value="" > 
+						<input type="date" name="Date" class='form-control' placeholder="Date" value="<?php echo $Date ?>" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="Qouloc" class='form-control' placeholder="Location" value="" > 
+						<input type="text" name="Qouloc" class='form-control' placeholder="Location" value="<?php echo $Qouloc ?>" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="QouPhone" class='form-control' placeholder="Phone" value="" > 
+						<input type="text" name="QouPhone" class='form-control' placeholder="Phone" value="<?php echo $QouPhone ?>" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="QouFax" class='form-control' placeholder="Fax" value="" > 
+						<input type="text" name="QouFax" class='form-control' placeholder="Fax" value="<?php echo $QouFax ?>" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="text" name="Projectname" class='form-control' placeholder="Project Name" value="" > 
+						<input type="text" name="Projectname" class='form-control' placeholder="Project Name" value="<?php echo $Projectname ?>" > 
 					</div>
 					<br>
 					<br>
