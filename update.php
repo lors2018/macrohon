@@ -1,8 +1,19 @@
 <?php
-
+include 'function.php';
 $con = mysqli_connect("localhost","root","","macro");
-
+$Qouref="";
 $id = $_GET['update'];
+$sql="Select * from data1 where id=$id";
+$result=mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($result);
+$Qouref = $row['Qouref'];
+$Date = $row['Date'];
+$Qouloc = $row['Qouloc'];
+$QouPhone = $row['QouPhone'];
+$QouFax = $row['QouFax'];
+$Projectname = $row['Projectname'];
+
+
 if (isset($_POST['submit'])) {
 	# code...
 	$Qouref = $_POST['Qouref'];
@@ -47,12 +58,12 @@ if ($result) {
 				</div>
 		<form method="POST" action="update.php">
 			<div class="col-md-6">
-						<input type="text" name="Qouref" class='form-control' placeholder="Qoutation Ref" value="" > 
+						<input type="text" name="Qouref" class='form-control' placeholder="Qoutation Ref" value="<?php echo $Qouref ?>" > 
 					</div>
 					<br>
 					<br>
 					<div class="col-md-6">
-						<input type="date" name="Date" class='form-control' placeholder="Date" value="" > 
+						<input type="date" name="Date" class='form-control' placeholder="Date" value="<?php echo $Date ?>" > 
 					</div>
 					<br>
 					<br>

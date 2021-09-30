@@ -16,10 +16,10 @@ include_once ('config.php');
 				<div class="row">
 				<form action="" method="POST"> 
 					<div class="col-md-6">
-						<input type="text" name="search" class='form-control' placeholder="Search By Quotation" value="" > 
+						<input type="text" name="search" class='form-control' placeholder="Search By Quotation Reference" value="" > 
 					</div>
 					<div class="col-md-6 text-left">
-						<button class="btn">Search</button>
+						<button class="btn btn-primary">Search</button>
 					</div>
 				</form>
 
