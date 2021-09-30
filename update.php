@@ -5,20 +5,7 @@ include('function.php');
 
 
 $id= $_GET['update']
-if (isset($_POST['submit'])) {
-	# code...
-	$Qouref = $_POST['Qouref'];
-	$Date = Date('y-m-d', strtotime($_POST['Date']));
-	$Qouloc = $_POST['Qouloc'];
-	$QouPhone = $_POST['QouPhone'];
-	$QouFax = $_POST['QouFax'];
-	$Projectname = $_POST['Projectname'];
 
-$query = "Update from data1 set id=$id, Qouref='$Qouref', Date='$Date', Qouloc='$Qouloc', QouPhone='$QouPhone', QouFax='$QouFax', Projectname='$Projectname' where id='$id";
-$result = mysqli_query($con,$query);
-
-header("location: index.php");
-}
 
 
 ?>
